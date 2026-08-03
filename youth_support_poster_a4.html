@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>청춘스럽 - 2026 청년지원사업 & 대전 청년공간 지도 가이드 (A4 가로 3페이지)</title>
+  
+  <!-- Noto Sans KR 및 Outfit 폰트 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 아이콘 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ----------------------------------------------------
+       1. 디자인 시스템 & 인쇄 가로 A4 (297mm x 210mm)
+       ---------------------------------------------------- */
+    @page {
+      size: A4 landscape;
+      margin: 0;
+    }
+
+    :root {
+      --brand-primary: #00A896;       /* 에메랄드 틸 */
+      --brand-secondary: #0284C7;     /* 청춘 블루 */
+      --brand-dark: #0F172A;          /* 차콜 */
+      --brand-purple: #7C3AED;        /* 보라 */
+      --brand-amber: #D97706;         /* 앰버 */
+      --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    body {
+      background-color: #CBD5E1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px;
+      gap: 28px;
+    }
+
+    .toolbar {
+      width: 1122px;
+      max-width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #FFFFFF;
+      padding: 14px 28px;
+      border-radius: 14px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 12px;
+      z-index: 100;
+    }
+
+    .toolbar h2 {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--brand-dark);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .toolbar-btn {
+      background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(0, 168, 150, 0.25);
+    }
+
+    /* ----------------------------------------------------
+       2. A4 프레임 (1122px x 793px)
+       ---------------------------------------------------- */
+    .a4-page {
+      width: 1122px;
+      height: 793px;
+      background: #F8FAFC;
+      border-radius: 6px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 28px 36px 20px 36px;
+      page-break-after: always;
+      page-break-inside: avoid;
+    }
+
+    .page-tag {
+      position: absolute;
+      top: 18px;
+      right: 24px;
+      background: var(--brand-dark);
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-family: 'Outfit', sans-serif;
+      z-index: 50;
+    }
+
+    /* ----------------------------------------------------
+       3. 헤더 영역
+       ---------------------------------------------------- */
+    .poster-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 10px;
+      position: relative;
+      z-index: 50;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand-group img {
+      height: 48px;
+      object-fit: contain;
+    }
+
+    .main-title-wrap h1 {
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--brand-dark);
+      letter-spacing: -1px;
+      line-height: 1.25;
+    }
+
+    .main-title-wrap h1 span {
+      color: var(--brand-primary);
+    }
+
+    .sub-tagline {
+      font-size: 12.5px;
+      color: #64748B;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    /* ----------------------------------------------------
+       4. PAGE 1 카드의 대형 타이틀 & 중앙 정렬 스타일
+       ---------------------------------------------------- */
+    .roadmap-container-v2 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .roadmap-card-interactive {
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 18px 16px;
+      box-shadow: var(--card-shadow);
+      border: 2px solid #E2E8F0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      height: 220px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+
+    .roadmap-card-interactive:hover {
+      transform: translateY(-5px);
+      border-color: var(--brand-primary);
+      box-shadow: 0 16px 30px rgba(0, 168, 150, 0.2);
+    }
+
+    .card-top-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 100%;
+    }
+
+    .step-badge {
+      background: var(--brand-primary);
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .target-pill-center {
+      font-size: 11px;
+      font-weight: 800;
+      color: #991B1B;
+      background: #FEE2E2;
+      padding: 4px 10px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-top: 4px;
+    }
+
+    .roadmap-card-interactive h3 {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--brand-dark);
+      text-align: center;
+      letter-spacing: -0.6px;
+      line-height: 1.35;
+      margin: 8px 0;
+      word-break: keep-all;
+    }
+
+    .benefit-box-center {
+      width: 100%;
+      background: #F0FDF4;
+      border: 1.5px solid #BBF7D0;
+      border-radius: 10px;
+      padding: 8px 10px;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #15803D;
+      text-align: center;
+    }
+
+    .banner-sub-project {
+      background: linear-gradient(135deg, #FEF3C7, #FDE68A);
+      border: 2px dashed #F59E0B;
+      border-radius: 14px;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      cursor: pointer;
+    }
+
+    .banner-text-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .banner-badge-red {
+      background: #EF4444;
+      color: #FFFFFF;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    .banner-main-txt {
+      font-size: 15px;
+      font-weight: 900;
+      color: #78350F;
+    }
+
+    /* ----------------------------------------------------
+       5. [PAGE 2] 정보 창구 & 꿀팁 4선
+       ---------------------------------------------------- */
+    .page2-layout-v2 {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      flex: 1;
+    }
+
+    .p2-card-section {
+      background: #FFFFFF;
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: var(--card-shadow);
+      border: 1.5px solid #E2E8F0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sec-title-h2 {
+      font-size: 17px;
+      font-weight: 900;
+      color: var(--brand-dark);
+      margin-bottom: 16px;
+      border-bottom: 2px solid #F1F5F9;
+      padding-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sec-title-h2 i {
+      color: var(--brand-primary);
+    }
+
+    .portal-korean-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .portal-korean-card {
+      background: #F8FAFC;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .portal-icon-circle {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: var(--brand-secondary);
+      flex-shrink: 0;
+    }
+
+    .portal-kr-info {
+      flex: 1;
+    }
+
+    .portal-kr-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: var(--brand-dark);
+    }
+
+    .portal-kr-desc {
+      font-size: 11px;
+      color: #64748B;
+      margin-top: 2px;
+    }
+
+    .tip-korean-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .tip-korean-item {
+      background: #F8FAFC;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 14px 16px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .tip-num-box {
+      background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+      color: #FFFFFF;
+      font-size: 13px;
+      font-weight: 900;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .tip-kr-content {
+      font-size: 12.5px;
+      color: var(--brand-dark);
+      line-height: 1.55;
+    }
+
+    .tip-kr-content strong {
+      color: #DC2626;
+      font-weight: 800;
+    }
+
+    /* ----------------------------------------------------
+       6. [PAGE 3 PERFECT MATCH] 원본 대전 지도 이미지 100% 동일 적용
+       ---------------------------------------------------- */
+    .map-exact-container {
+      position: relative;
+      flex: 1;
+      width: 100%;
+      background: #DCEBFA;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2.5px solid #93C5FD;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* 사용자 원본 대전 지도 고화질 이미지 배경 */
+    .exact-map-bg-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    /* 지도 상 인터렉티브 핫스팟 클릭 레이어 (10개 공간 클릭 시 모달 안내) */
+    .hotspot-pill-exact {
+      position: absolute;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.96);
+      border: 2.5px solid #0284C7;
+      color: #0F172A;
+      font-size: 11.5px;
+      font-weight: 900;
+      padding: 5px 14px;
+      border-radius: 20px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+      transition: all 0.2s;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hotspot-pill-exact:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      z-index: 50;
+      border-color: #00A896;
+    }
+
+    .pill-clr-blue { border-color: #0284C7; color: #0369A1; }
+    .pill-clr-green { border-color: #16A34A; color: #15803D; }
+    .pill-clr-orange { border-color: #EA580C; color: #C2410C; }
+    .pill-clr-red { border-color: #DC2626; color: #B91C1C; }
+    .pill-clr-purple { border-color: #7C3AED; color: #6B21A8; }
+    .pill-clr-teal { border-color: #0D9488; color: #0F766E; }
+
+    /* ----------------------------------------------------
+       7. 모달 팝업
+       ---------------------------------------------------- */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .modal-card-box {
+      background: #FFFFFF;
+      border-radius: 20px;
+      width: 560px;
+      max-width: 90%;
+      padding: 28px 32px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      position: relative;
+      transform: scale(0.95);
+      transition: transform 0.25s ease;
+      border: 2px solid #E2E8F0;
+    }
+
+    .modal-overlay.active .modal-card-box {
+      transform: scale(1);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      background: #F1F5F9;
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 16px;
+      color: #64748B;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-step-tag {
+      display: inline-block;
+      background: var(--brand-primary);
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 3px 10px;
+      border-radius: 12px;
+      margin-bottom: 8px;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .modal-title {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--brand-dark);
+      margin-bottom: 12px;
+    }
+
+    .modal-body-text {
+      font-size: 14px;
+      color: #334155;
+      line-height: 1.65;
+      background: #F8FAFC;
+      border-radius: 12px;
+      padding: 16px;
+      border: 1px solid #E2E8F0;
+      margin-bottom: 20px;
+      word-break: keep-all;
+    }
+
+    .modal-benefit-box {
+      background: #F0FDF4;
+      border-left: 4px solid #16A34A;
+      padding: 10px 14px;
+      border-radius: 0 10px 10px 0;
+      font-size: 13px;
+      font-weight: 800;
+      color: #15803D;
+      margin-bottom: 24px;
+    }
+
+    .modal-link-btn {
+      width: 100%;
+      background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 4px 14px rgba(0, 168, 150, 0.3);
+    }
+
+    /* ----------------------------------------------------
+       8. 푸터 바텀
+       ---------------------------------------------------- */
+    .poster-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1.5px solid #E2E8F0;
+      position: relative;
+      z-index: 50;
+    }
+
+    .footer-brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-brand-wrap img {
+      height: 30px;
+      object-fit: contain;
+    }
+
+    .footer-txt {
+      font-size: 10.5px;
+      color: #64748B;
+      font-weight: 500;
+    }
+
+    /* ----------------------------------------------------
+       9. 인쇄 최적화 (@media print)
+       ---------------------------------------------------- */
+    @media print {
+      body {
+        background: none;
+        padding: 0;
+        gap: 0;
+      }
+      .toolbar, .modal-overlay {
+        display: none !important;
+      }
+      .a4-page {
+        box-shadow: none;
+        width: 297mm;
+        height: 210mm;
+        border-radius: 0;
+        margin: 0;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 상단 프리뷰 안내 툴바 -->
+  <div class="toolbar">
+    <h2><i class="fa-solid fa-map-location-dot" style="color: var(--brand-primary);"></i> 대전서구 청춘스럽 - 청년지원사업 & 대전 청년공간 10곳 비주얼 지도 (3페이지)</h2>
+    <button class="toolbar-btn" onclick="window.print()">
+      <i class="fa-solid fa-print"></i> 전체 3페이지 PDF 저장 / 인쇄
+    </button>
+  </div>
+
+  <!-- ====================================================
+       PAGE 1: 정중앙 대형 타이틀 7단계 로드맵
+       ==================================================== -->
+  <div class="a4-page" id="page-1">
+    <div class="page-tag">PAGE 1 / 3</div>
+
+    <header class="poster-header">
+      <div class="brand-group">
+        <img src="logo_cheongchunsreup.png" alt="대전서구 청년공간 청춘스럽 로고">
+        <div class="main-title-wrap">
+          <h1>청년지원사업 <span>한눈에 보기</span></h1>
+          <p class="sub-tagline">사업명을 클릭하시면 상세설명 팝업과 공식 홈페이지 바로가기가 나타납니다!</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- 7단계 정중앙 돋보이는 카드 (상단 4개 + 하단 3개) -->
+    <div class="roadmap-container-v2">
+      
+      <!-- Step 01 -->
+      <div class="roadmap-card-interactive" onclick="openModal('step01')">
+        <div class="card-top-center"><span class="step-badge">Step 01</span></div>
+        <span class="target-pill-center">공백기 청년 / 자신감 회복</span>
+        <h3>청년도전 지원사업</h3>
+        <div class="benefit-box-center"><i class="fa-solid fa-gift"></i> 수당 최대 250만원 지원</div>
+      </div>
+
+      <!-- Step 02 -->
+      <div class="roadmap-card-interactive" style="border-color: #0284C7;" onclick="openModal('step02')">
+        <div class="card-top-center"><span class="step-badge" style="background: #0284C7;">Step 02</span></div>
+        <span class="target-pill-center" style="background: #E0F2FE; color: #0369A1;">초기 진단 & 첫걸음 밀착</span>
+        <h3 style="color: #0284C7;">일자리첫걸음 보장센터</h3>
+        <div class="benefit-box-center" style="border-color: #BAE6FD; color: #0369A1; background: #E0F2FE;"><i class="fa-solid fa-user-check"></i> 1:1 맞춤 진단 & 밀착 지원</div>
+      </div>
+
+      <!-- Step 03 -->
+      <div class="roadmap-card-interactive" onclick="openModal('step03')">
+        <div class="card-top-center"><span class="step-badge">Step 03</span></div>
+        <span class="target-pill-center">취업지원 + 소득지원 함께</span>
+        <h3>국민취업 지원제도</h3>
+        <div class="benefit-box-center"><i class="fa-solid fa-check"></i> 월 50만원 × 6개월 수당</div>
+      </div>
+
+      <!-- Step 04 -->
+      <div class="roadmap-card-interactive" style="border-color: var(--brand-purple);" onclick="openModal('step04')">
+        <div class="card-top-center"><span class="step-badge" style="background: var(--brand-purple);">Step 04</span></div>
+        <span class="target-pill-center" style="background: #F3E8FF; color: #6B21A8;">신기술 / 디지털 직무 훈련</span>
+        <h3 style="color: var(--brand-purple);">K-뉴딜 아카데미</h3>
+        <div class="benefit-box-center" style="border-color: #E9D5FF; color: #6B21A8; background: #F3E8FF;"><i class="fa-solid fa-certificate"></i> 수강료 100% 국비 + 장려금</div>
+      </div>
+
+    </div>
+
+    <!-- 하단 3개 단계 (Step 05, 06, 07) -->
+    <div class="roadmap-container-v2" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 16px;">
+      
+      <!-- Step 05 -->
+      <div class="roadmap-card-interactive" onclick="openModal('step05')">
+        <div class="card-top-center"><span class="step-badge" style="background: #D97706;">Step 05</span></div>
+        <span class="target-pill-center" style="background: #FEF3C7; color: #B45309;">기업 실무 & 인턴십 경험</span>
+        <h3 style="color: #B45309;">미래내일 일경험 & 인턴</h3>
+        <div class="benefit-box-center" style="border-color: #FDE68A; color: #B45309; background: #FEF3C7;"><i class="fa-solid fa-building-user"></i> 실습 수당 & 경력증명</div>
+      </div>
+
+      <!-- Step 06 -->
+      <div class="roadmap-card-interactive" style="border-color: #0284C7;" onclick="openModal('step06')">
+        <div class="card-top-center"><span class="step-badge" style="background: #0284C7;">Step 06</span></div>
+        <span class="target-pill-center" style="background: #E0F2FE; color: #0369A1;">정부·공공 인재 매칭</span>
+        <h3 style="color: #0284C7;">국가인재DB (청년인재DB)</h3>
+        <div class="benefit-box-center" style="border-color: #BAE6FD; color: #0369A1; background: #E0F2FE;"><i class="fa-solid fa-star"></i> 2030db.go.kr 프로필 등록</div>
+      </div>
+
+      <!-- Step 07 -->
+      <div class="roadmap-card-interactive" onclick="openModal('step07')">
+        <div class="card-top-center"><span class="step-badge">Step 07</span></div>
+        <span class="target-pill-center">대학생 & 지역 청년 진로</span>
+        <h3>대학일자리 플러스센터</h3>
+        <div class="benefit-box-center"><i class="fa-solid fa-comments"></i> 1:1 전담 무료 컨설팅</div>
+      </div>
+
+    </div>
+
+    <!-- 하단 서브 강조 배너 -->
+    <div class="banner-sub-project" onclick="openModal('stepGrowth')">
+      <div class="banner-text-group">
+        <span class="banner-badge-red">가볍게 시작하고 싶다면?</span>
+        <div class="banner-main-txt">
+          🌱 청년성장프로젝트 <span>(초기상담, 커뮤니티, 마음 케어 | 💡 클릭 시 상세 안내 & 바로가기)</span>
+        </div>
+      </div>
+      <div style="font-size: 13px; font-weight: 900; color: #92400E;">
+        <i class="fa-solid fa-arrow-right"></i> 자세히 보기
+      </div>
+    </div>
+
+    <footer class="poster-footer">
+      <div class="footer-brand-wrap">
+        <img src="logo_cheongchunsreup.png" alt="청춘스럽 로고">
+        <span class="footer-txt">| 대전서구 청년공간 청춘스럽 (PAGE 1)</span>
+      </div>
+      <div class="footer-txt">
+        <i class="fa-solid fa-location-dot"></i> 대전광역시 서구 계룡로 314, 대전일보사 1층
+      </div>
+    </footer>
+  </div>
+
+  <!-- ====================================================
+       PAGE 2: 추천 포털 6선 & 사업 참여 필수 꿀팁 4선
+       ==================================================== -->
+  <div class="a4-page" id="page-2">
+    <div class="page-tag">PAGE 2 / 3</div>
+
+    <header class="poster-header">
+      <div class="brand-group">
+        <img src="logo_cheongchunsreup.png" alt="대전서구 청년공간 청춘스럽 로고">
+        <div class="main-title-wrap">
+          <h1>청년 스스로 <span>찾아보는 정보 창구</span> & 핵심 꿀팁</h1>
+          <p class="sub-tagline">정부 및 대전 서구 필수 정보 포털 6선과 사업 신청 전 꼭 확인해야 할 꿀팁!</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="page2-layout-v2">
+      
+      <!-- 왼쪽: 정돈된 한글 포털 6선 -->
+      <div class="p2-card-section">
+        <div class="sec-title-h2">
+          <i class="fa-solid fa-compass"></i> 추천 청년 정보 포털 6선
+        </div>
+
+        <div class="portal-korean-grid">
+          
+          <div class="portal-korean-card" onclick="window.open('https://work24.go.kr', '_blank')" style="cursor:pointer;">
+            <div class="portal-icon-circle"><i class="fa-solid fa-globe"></i></div>
+            <div class="portal-kr-info">
+              <div class="portal-kr-title">고용24</div>
+              <div class="portal-kr-desc">중앙정부 대표 일자리 통합 포털</div>
+            </div>
+          </div>
+
+          <div class="portal-korean-card" onclick="window.open('https://youthcenter.go.kr', '_blank')" style="cursor:pointer;">
+            <div class="portal-icon-circle" style="color: #00A896;"><i class="fa-solid fa-layer-group"></i></div>
+            <div class="portal-kr-info">
+              <div class="portal-kr-title">온통청년</div>
+              <div class="portal-kr-desc">대한민국 모든 청년정책 종합 검색</div>
+            </div>
+          </div>
+
+          <div class="portal-korean-card" onclick="window.open('https://www.hrd.go.kr', '_blank')" style="cursor:pointer;">
+            <div class="portal-icon-circle" style="color: #7C3AED;"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="portal-kr-info">
+              <div class="portal-kr-title">K-뉴딜 아카데미</div>
+              <div class="portal-kr-desc">디지털·신기술 직업훈련 (HRD-Net)</div>
+            </div>
+          </div>
+
+          <div class="portal-korean-card" onclick="window.open('https://2030db.go.kr', '_blank')" style="cursor:pointer;">
+            <div class="portal-icon-circle" style="color: #0284C7;"><i class="fa-solid fa-user-check"></i></div>
+            <div class="portal-kr-info">
+              <div class="portal-kr-title">청년인재DB</div>
+              <div class="portal-kr-desc">정부 청년인턴 & 자문위원 인재 등록</div>
+            </div>
+          </div>
+
+          <div class="portal-korean-card">
+            <div class="portal-icon-circle" style="color: #2563EB;"><i class="fa-solid fa-magnifying-glass"></i></div>
+            <div class="portal-kr-info">
+              <div class="portal-kr-title">서청플</div>
+              <div class="portal-kr-desc">대전 서구 청년 전용 소통·공간 플랫폼</div>
+            </div>
+          </div>
+
+          <div class="portal-korean-card">
+            <div class="portal-icon-circle" style="color: #E17055;"><i class="fa-solid fa-house-user"></i></div>
+            <div class="portal-kr-info">
+              <div class="portal-kr-title">청춘스럽 채널</div>
+              <div class="portal-kr-desc">청년공간 공식 블로그 & 인스타그램</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 오른쪽: 정돈된 한글 꿀팁 4선 -->
+      <div class="p2-card-section">
+        <div class="sec-title-h2">
+          <i class="fa-solid fa-lightbulb" style="color: #E17055;"></i> 사업 참여 필수 꿀팁 4선
+        </div>
+
+        <div class="tip-korean-list">
+          
+          <div class="tip-korean-item">
+            <span class="tip-num-box">01</span>
+            <div class="tip-kr-content">
+              <strong>공백기 청년</strong>을 위한 청년도전지원사업은 수당(최대 250만원) 지원이 포함되어 있으므로 타 구직수당 사업 간 <strong>중복 수혜 여부를 사전에 확인</strong>해야 합니다.
+            </div>
+          </div>
+
+          <div class="tip-korean-item">
+            <span class="tip-num-box">02</span>
+            <div class="tip-kr-content">
+              <strong>일자리첫걸음 보장센터</strong>에서 초기 심층 진단을 먼저 받으시면 개인별 상황에 딱 맞는 지원사업으로 맞춤 연계받아 편리합니다.
+            </div>
+          </div>
+
+          <div class="tip-korean-item">
+            <span class="tip-num-box">03</span>
+            <div class="tip-kr-content">
+              <strong>K-뉴딜 아카데미</strong> 및 내일배움카드 직무 훈련, 미래내일 일경험 인턴십은 국민취업지원제도 <strong>참여 중에도 신청 및 수강이 가능</strong>합니다.
+            </div>
+          </div>
+
+          <div class="tip-korean-item">
+            <span class="tip-num-box">04</span>
+            <div class="tip-kr-content">
+              <strong>청년성장프로젝트</strong>는 다른 모든 중앙정부 및 지자체 청년지원사업과 <strong>100% 중복 참여가 가능</strong>합니다.
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="poster-footer">
+      <div class="footer-brand-wrap">
+        <img src="logo_cheongchunsreup.png" alt="청춘스럽 로고">
+        <span class="footer-txt">| 대전서구 청년공간 청춘스럽 (PAGE 2)</span>
+      </div>
+      <div class="footer-txt">
+        <i class="fa-solid fa-phone"></i> 문의전화: 042-XXXX-XXXX | 대전 서구 청년들의 꿈을 응원합니다!
+      </div>
+    </footer>
+  </div>
+
+  <!-- ====================================================
+       PAGE 3 [100% PERFECT MAP]: 사용자 제공 원본 대전 지도 배경 100% 적용
+       ==================================================== -->
+  <div class="a4-page" id="page-3">
+    <div class="page-tag">PAGE 3 / 3</div>
+
+    <header class="poster-header">
+      <div class="brand-group">
+        <img src="logo_cheongchunsreup.png" alt="대전서구 청년공간 청춘스럽 로고">
+        <div class="main-title-wrap">
+          <h1>한눈에 보는 <span>대전 청년공간 지도</span> (총 10곳)</h1>
+          <p class="sub-tagline">대전 전역 10개 대표 청년활동 공간 위치를 지도에서 확인해보세요!</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- 원본 지도 100% 적용 컨테이너 -->
+    <div class="map-exact-container">
+      
+      <!-- 사용자 원본 이미지 100% 피팅 -->
+      <img src="daejeon_map_bg.png" alt="대전 청년공간 원본 지도" class="exact-map-bg-img">
+
+      <!-- 10개 청년공간 핫스팟 인터랙션 버튼 레이어 (위치 100% 정밀 매칭) -->
+      
+      <!-- 1. 서구 - 청춘스럽 -->
+      <div class="hotspot-pill-exact pill-clr-blue" style="left: 36%; top: 46%;" onclick="openSpaceModal('청춘스럽', '대전 서구 계룡로 314 (대전일보사 1층)', '청년 자립, 진로 상담, 청년도전지원사업 및 소통 공간')">
+        <i class="fa-solid fa-house-chimney-user"></i> 청춘스럽
+      </div>
+
+      <!-- 2. 서구 - 청춘정거장 -->
+      <div class="hotspot-pill-exact pill-clr-blue" style="left: 41.5%; top: 25%;" onclick="openSpaceModal('청춘정거장', '대전 서구 대덕대로 198 (프뢰벨빌딩 7층)', '스터디룸, 미디어 스튜디오, 청년 자기계발 지원 공간')">
+        <i class="fa-solid fa-train"></i> 청춘정거장
+      </div>
+
+      <!-- 3. 서구 - 청춘포털 -->
+      <div class="hotspot-pill-exact pill-clr-blue" style="left: 28%; top: 58%;" onclick="openSpaceModal('청춘포털', '대전 서구 사마7길 33 (도솔마을플랫폼 2층)', '청년 네트워크, 공유 주방 및 마을 교류 소통 공간')">
+        <i class="fa-solid fa-users"></i> 청춘포털
+      </div>
+
+      <!-- 4. 광역 - 청년마당 -->
+      <div class="hotspot-pill-exact pill-clr-green" style="left: 47%; top: 21%;" onclick="openSpaceModal('청년마당 (대전청년내일센터)', '대전 중구 중앙로 119 (선화포럼 3층)', '대전청년내일센터 운영, 청년정책 총괄 및 정보 플랫폼 Hub')">
+        <i class="fa-solid fa-landmark"></i> 청년마당
+      </div>
+
+      <!-- 5. 광역 - 청춘너나들이 -->
+      <div class="hotspot-pill-exact pill-clr-green" style="left: 34.5%; top: 70.5%;" onclick="openSpaceModal('청춘너나들이', '대전 서구 둔산중로19번길 36 (형통프라자 3층)', '자유로운 커뮤니티, 공유 라운지 및 문화 행사 공간')">
+        <i class="fa-solid fa-icons"></i> 청춘너나들이
+      </div>
+
+      <!-- 6. 광역 - 청춘나들목 -->
+      <div class="hotspot-pill-exact pill-clr-green" style="left: 65.5%; top: 57.5%;" onclick="openSpaceModal('청춘나들목', '대전 동구 중앙로 215 (대전역 지하 3층)', '대전역 내 위치한 청년 여행 라운지, 소통 및 쉼터 공간')">
+        <i class="fa-solid fa-route"></i> 청춘나들목
+      </div>
+
+      <!-- 7. 동구 - 동구동락 -->
+      <div class="hotspot-pill-exact pill-clr-orange" style="left: 60%; top: 50.5%;" onclick="openSpaceModal('동구동락', '대전 동구 백룡로 20 (새마을회관 3층)', '동구 청년 도전 지원, 공유 주방, 복층 쉼터 공간')">
+        <i class="fa-solid fa-face-smile-beam"></i> 동구동락
+      </div>
+
+      <!-- 8. 중구 - 청년모아 -->
+      <div class="hotspot-pill-exact pill-clr-purple" style="left: 48%; top: 78%;" onclick="openSpaceModal('청년모아', '대전 중구 목중로70번길 15 (2층)', '중구 청년 문화활동, 취·창업 및 진로 탐색 복합 공간')">
+        <i class="fa-solid fa-lightbulb"></i> 청년모아
+      </div>
+
+      <!-- 9. 유성구 - 유성 청년공간 -->
+      <div class="hotspot-pill-exact pill-clr-teal" style="left: 27.5%; top: 40%;" onclick="openSpaceModal('유성구 청년공간', '대전 유성구 어은로57번길 17 (안녕센터)', '유성구 청년 커뮤니티, 네트워크 지원 및 활동 공간')">
+        <i class="fa-solid fa-leaf"></i> 유성 청년공간
+      </div>
+
+      <!-- 10. 대덕구 - 청년벙커 -->
+      <div class="hotspot-pill-exact pill-clr-red" style="left: 56.5%; top: 28.5%;" onclick="openSpaceModal('청년벙커', '대전 대덕구 대전로1033번길 20 (오정동 지하 1층)', '의사당(회의실), 미디어 스튜디오, 공유주방 복합문화 벙커 공간')">
+        <i class="fa-solid fa-shield-halved"></i> 청년벙커
+      </div>
+
+    </div>
+
+    <footer class="poster-footer">
+      <div class="footer-brand-wrap">
+        <img src="logo_cheongchunsreup.png" alt="청춘스럽 로고">
+        <span class="footer-txt">| 대전서구 청년공간 청춘스럽 (PAGE 3)</span>
+      </div>
+      <div class="footer-txt">
+        <i class="fa-solid fa-map"></i> 대전광역시 10개 청년공간 위치 지도 (daejeonyouthportal.kr)
+      </div>
+    </footer>
+  </div>
+
+  <!-- ====================================================
+       모달 팝업 엘리먼트
+       ==================================================== -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModalOnOverlay(event)">
+    <div class="modal-card-box">
+      <button class="modal-close-btn" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+      <span class="modal-step-tag" id="mStepTag">Step 01</span>
+      <h2 class="modal-title" id="mTitle">사업명</h2>
+      <div class="modal-body-text" id="mBodyText">상세 설명이 들어갑니다.</div>
+      <div class="modal-benefit-box" id="mBenefit"><i class="fa-solid fa-gift"></i> 핵심 혜택 문구</div>
+      <a href="#" target="_blank" class="modal-link-btn" id="mLinkBtn"><i class="fa-solid fa-arrow-up-right-from-square"></i> 공식 홈페이지 바로가기</a>
+    </div>
+  </div>
+
+  <script>
+    const modalData = {
+      step01: { step: "Step 01", title: "청년도전 지원사업", body: "공백기로 주춤했던 청년들의 마음 케어, 자신감 회복 및 맞춤형 1:1 상담 프로그램을 제공합니다.", benefit: "수당 최대 250만원 지원 (1회당 50만원 수당 지급)", url: "https://youthcenter.go.kr" },
+      step02: { step: "Step 02", title: "일자리첫걸음 보장센터", body: "구직 초기 단계 청년의 현재 상황을 정밀 진단하고 1:1 밀착 상담을 통해 개인별 상황에 적합한 정책으로 연결합니다.", benefit: "1:1 맞춤 구직 진단 & 청년정책 밀착 연계 지원", url: "https://work24.go.kr" },
+      step03: { step: "Step 03", title: "국민취업지원제도", body: "취업을 희망하는 청년에게 1:1 개인별 심층 취업 상담과 함께 직업 훈련, 자소서 첨삭, 구직촉진수당을 종합적으로 제공합니다.", benefit: "월 50만원 × 6개월 구직촉진수당 + 맞춤 취업 서비스", url: "https://kua.work.go.kr" },
+      step04: { step: "Step 04", title: "K-뉴딜 아카데미 (직업훈련)", body: "디지털·신기술 및 미래 뉴딜 산업 실무 프로젝트 교육을 100% 국비 지원으로 수강할 수 있습니다.", benefit: "수강료 100% 국비 지원 + 매월 훈련장려금 지급", url: "https://www.hrd.go.kr" },
+      step05: { step: "Step 05", title: "미래내일 일경험 & 청년인턴", body: "민간 기업 인턴십, ESG 프로젝트 실습 및 공공기관 청년인턴 참여를 통해 직접 기업 현장에서 실무 역량을 쌓습니다.", benefit: "실습 수당 지급 & 공식 경력인증서 발급", url: "https://www.work.go.kr/experience" },
+      step06: { step: "Step 06", title: "국가인재DB (청년인재DB)", body: "2030 청년들이 본인의 인재 프로필을 등록하면, 정부 위원회 자문위원 및 공공기관 청년인턴 기회로 연결됩니다.", benefit: "2030db.go.kr 프로필 등록 ➔ 정부·공공 매칭 지원", url: "https://2030db.go.kr" },
+      step07: { step: "Step 07", title: "대학일자리 플러스센터", body: "대학 재학생과 지역 청년 누구나 진로 상담, 자기소개서 전문 첨삭, 실전 면접 컨설팅을 1:1 무료로 받습니다.", benefit: "1:1 전담 컨설턴트 무료 취업·진로 상담", url: "https://work24.go.kr" },
+      stepGrowth: { step: "서브 지원", title: "청년성장프로젝트", body: "초기 상담, 마음 케어, 청년 커뮤니티 지원 등 청년들이 가볍게 참여할 수 있는 맞춤형 성장 프로그램입니다.", benefit: "모든 지자체·중앙 청년지원사업과 100% 중복 참여 가능", url: "https://youthcenter.go.kr" }
+    };
+
+    function openModal(key) {
+      const data = modalData[key];
+      if (!data) return;
+      document.getElementById('mStepTag').innerText = data.step;
+      document.getElementById('mTitle').innerText = data.title;
+      document.getElementById('mBodyText').innerText = data.body;
+      document.getElementById('mBenefit').innerHTML = `<i class="fa-solid fa-gift"></i> ${data.benefit}`;
+      document.getElementById('mLinkBtn').href = data.url;
+      document.getElementById('modalOverlay').classList.add('active');
+    }
+
+    function openSpaceModal(name, address, desc) {
+      document.getElementById('mStepTag').innerText = "대전 청년공간 10선";
+      document.getElementById('mTitle').innerText = name;
+      document.getElementById('mBodyText').innerHTML = `<strong>위치 주소:</strong> ${address}<br><br><strong>공간 특징:</strong> ${desc}`;
+      document.getElementById('mBenefit').innerHTML = `<i class="fa-solid fa-map-location-dot"></i> 대전청년포털(daejeonyouthportal.kr)을 통해 무료 공간 대관이 가능합니다.`;
+      document.getElementById('mLinkBtn').href = "https://www.daejeonyouthportal.kr";
+      document.getElementById('modalOverlay').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('modalOverlay').classList.remove('active');
+    }
+
+    function closeModalOnOverlay(e) {
+      if (e.target.id === 'modalOverlay') closeModal();
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+
+</body>
+</html>

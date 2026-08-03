@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리팀 주간, 야간 근무 시간</title>
+    <style>
+        /* A4 규격 및 인쇄용 기본 설정 */
+        @page {
+            size: A4;
+            margin: 20mm 15mm 20mm 15mm;
+        }
+
+        body {
+            font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+            color: #000000;
+            margin: 0;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        /* 문서 제목 스타일 */
+        .title {
+            text-align: center;
+            font-size: 24pt;
+            font-weight: bold;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        /* 근무 시간 표 스타일 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #000000;
+            margin-bottom: 25px;
+        }
+
+        th, td {
+            border: 1px solid #000000;
+            padding: 6px 10px;
+            font-size: 11pt;
+            vertical-align: middle;
+        }
+
+        /* 헤더 스타일 */
+        th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+            text-align: center;
+            height: 32px;
+        }
+
+        /* 구분 열 (주간근무, 야간근무) */
+        .category {
+            text-align: center;
+            font-weight: bold;
+            width: 15%;
+        }
+
+        /* 시간 열 */
+        .time-col {
+            text-align: center;
+            width: 25%;
+            white-space: nowrap;
+        }
+
+        /* 내용 열 */
+        .content-col {
+            text-align: left;
+            width: 60%;
+        }
+
+        /* 휴식 구간 배경색 음영 처리 (이미지 서식 반영) */
+        .rest-row {
+            background-color: #e8e8e8;
+        }
+
+        /* 하단 유의사항 스타일 */
+        .notice-container {
+            margin-top: 20px;
+            font-size: 12pt;
+            font-weight: bold;
+            color: #b71c1c; /* 붉은색 강조 */
+            line-height: 1.8;
+        }
+
+        .notice-item {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 문서 제목 -->
+    <div class="title">관리팀 주간, 야간 근무 시간</div>
+
+    <!-- 근무시간 표 -->
+    <table>
+        <thead>
+            <tr>
+                <th class="category">구분</th>
+                <th class="time-col">시간</th>
+                <th class="content-col">내용</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- [주간근무] (10개 행) -->
+            <tr>
+                <td class="category" rowspan="10">주간근무</td>
+                <td class="time-col">07:00~07:30</td>
+                <td class="content-col">인수인계</td>
+            </tr>
+            <tr>
+                <td class="time-col">07:30~09:30</td>
+                <td class="content-col">근무 &nbsp;&nbsp;07:30 ~ 09:30 (입석근무)</td>
+            </tr>
+            <tr class="rest-row">
+                <td class="time-col">09:30~10:00</td>
+                <td class="content-col">휴식 &nbsp;&nbsp;09:30 ~ 10:00</td>
+            </tr>
+            <tr>
+                <td class="time-col">10:00~11:30</td>
+                <td class="content-col">근무 &nbsp;&nbsp;10:00 ~ 11:30</td>
+            </tr>
+            <tr class="rest-row">
+                <td class="time-col">11:30~13:00</td>
+                <td class="content-col">휴식(식사)</td>
+            </tr>
+            <tr>
+                <td class="time-col">13:00~14:30</td>
+                <td class="content-col">근무</td>
+            </tr>
+            <tr class="rest-row">
+                <td class="time-col">14:30~15:00</td>
+                <td class="content-col">휴식</td>
+            </tr>
+            <tr>
+                <td class="time-col">15:00~16:30</td>
+                <td class="content-col">근무</td>
+            </tr>
+            <tr class="rest-row">
+                <td class="time-col">16:30~17:00</td>
+                <td class="content-col">휴식</td>
+            </tr>
+            <tr>
+                <td class="time-col">17:00~18:00</td>
+                <td class="content-col">근무</td>
+            </tr>
+
+            <!-- [야간근무] (10개 행) -->
+            <tr>
+                <td class="category" rowspan="10">야간근무</td>
+                <td class="time-col">18:00~19:00</td>
+                <td class="content-col">입석근무</td>
+            </tr>
+            <tr class="rest-row">
+                <td class="time-col">19:00~20:00</td>
+                <td class="content-col">휴식(석식)</td>
+            </tr>
+            <tr>
+                <td class="time-col">20:00~21:00</td>
+                <td class="content-col">근무</td>
+            </tr>
+            <tr>
+                <td class="time-col">21:00~21:30</td>
+                <td class="content-col">순찰(21시 지하주차장 폐쇄)</td>
+            </tr>
+            <tr>
+                <td class="time-col">21:30~22:30</td>
+                <td class="content-col">근무</td>
+            </tr>
+            <tr>
+                <td class="time-col">22:30~23:00</td>
+                <td class="content-col">순찰(22시 30분부터 12층~1층까지 소등)</td>
+            </tr>
+            <tr class="rest-row">
+                <td class="time-col">23:00~05:00</td>
+                <td class="content-col">휴식</td>
+            </tr>
+            <tr>
+                <td class="time-col">05:00~06:00</td>
+                <td class="content-col">신문배달 &amp; 휴식</td>
+            </tr>
+            <tr>
+                <td class="time-col">06:00~07:00</td>
+                <td class="content-col">순찰(6시 지하주차장 개방) 동문 개방</td>
+            </tr>
+            <tr>
+                <td class="time-col">07:00~07:30</td>
+                <td class="content-col">인수인계(7시 TV on)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- 하단 유의사항 -->
+    <div class="notice-container">
+        <div>※ • 근무시간 엄수 준수</div>
+        <div class="notice-item">• 근무중 불필요한 행동 금지</div>
+        <div class="notice-item">• 상황발생시 신속한 보고 조치 (총무과에도 보고)</div>
+    </div>
+
+</body>
+</html>
