@@ -1324,7 +1324,101 @@ img {
   word-break: keep-all;
 }
 
+/* ── 최근 출강 아카이빙 섹션 ─────────────────────────────────────── */
+.archive-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.archive-card {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+  transition: all var(--transition-normal);
+}
+
+.archive-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-glow);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+}
+
+/* 카드 상단 사진 영역 */
+.archive-img-box {
+  height: 200px;
+  background: var(--bg-tertiary);
+  position: relative;
+  overflow: hidden;
+}
+
+.archive-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.archive-card:hover .archive-img-box img {
+  transform: scale(1.08);
+}
+
+/* 카테고리 배지 (좌측 상단) */
+.archive-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: var(--bg-glass);
+  backdrop-filter: blur(8px);
+  color: var(--accent-lime);
+  font-size: 0.725rem;
+  font-weight: 800;
+  border: 1px solid var(--border-glow);
+}
+
+/* 날짜 배지 (우측 상단) */
+.archive-date {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(37, 99, 235, 0.85);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* 카드 하단 텍스트 영역 */
+.archive-info {
+  padding: 18px 20px;
+}
+
+.archive-info .archive-org {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent-blue);
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.archive-info h4 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.4;
+  word-break: keep-all;
+}
+
 /* 12. Impact */
+
 .impact-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1597,6 +1691,10 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .archive-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .mobile-toggle {
     display: flex;
   }
@@ -1717,6 +1815,10 @@ img {
   }
 
   .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .archive-grid {
     grid-template-columns: 1fr;
   }
 
