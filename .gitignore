@@ -1,0 +1,6 @@
+# Git ignore
+node_modules/
+helproomz-bot/
+youth-policy-bot/
+.env
+*.log
