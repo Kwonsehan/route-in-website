@@ -272,29 +272,39 @@ img {
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 1.4rem;
-  font-weight: 900;
-  letter-spacing: -0.03em;
   z-index: 1002;
+  text-decoration: none;
 }
 
-.logo-icon-svg {
-  width: 38px;
-  height: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+.header-logo-img {
+  height: 40px;
+  width: auto;
+  max-width: 190px;
+  object-fit: contain;
+  display: block;
+  transition: transform var(--transition-fast);
 }
 
-.logo-text {
-  font-weight: 800;
+.logo:hover .header-logo-img {
+  transform: scale(1.03);
 }
 
-.logo-text span {
-  color: var(--accent-lime);
+/* 라이트모드 기본 (다크로고 숨김) */
+.logo-dark {
+  display: none !important;
 }
+.logo-light {
+  display: block !important;
+}
+
+/* 다크모드 (라이트로고 숨김, 다크로고 표시) */
+[data-theme="dark"] .logo-light {
+  display: none !important;
+}
+[data-theme="dark"] .logo-dark {
+  display: block !important;
+}
+
 
 .nav-menu {
   display: flex;
@@ -1767,6 +1777,11 @@ img {
     font-size: 1.85rem;
     line-height: 1.3;
     text-align: center;
+  }
+
+  .header-logo-img {
+    height: 32px;
+    max-width: 150px;
   }
 
   .hero-subtitle {
